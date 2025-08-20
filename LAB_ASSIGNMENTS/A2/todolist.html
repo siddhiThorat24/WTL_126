@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="todolist.css">
+    <title>To do List</title>
+</head>
+<body>
+
+    <header>
+        <h2>🌟 My Daily Tasks</h2>
+    </header>
+
+    <div class="container">
+        <div class="input-container">
+            <h1>To Do List</h1>
+            <input type="text" placeholder="Add new to do.. " class="text" id="inputText">
+            <button class="Btn" id="inputBtn">Add</button>
+        </div>
+
+        <ul class="list" id="todolist">
+            <!--<li><p></p></li>
+            <li></li>
+            <li></li>-->
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 My To-Do App | Stay Organized </p>
+    </footer>
+
+    <script>
+        const inputText=document.getElementById('inputText');
+        const inputBtn=document.getElementById('inputBtn');
+        const todolist=document.getElementById('todolist');
+
+        let editTodo = null;
+
+        const add=()=>{
+            const input=inputText.value.trim();
+            if(input.length<= 0){
+                alert("You must enter to do..");
+                return false;
+            }
+
+            if (inputBtn.textContent === "Edit" && editTodo !== null) {
+                editTodo.querySelector('p').textContent = input;
+                inputBtn.textContent = "Add";
+                inputText.value = "";
+                editTodo = null;
+            }
+            else{
+                const li=document.createElement('li');
+                const p=document.createElement('p');
+
+                p.innerHTML=input;
+                li.appendChild(p);
+
+                const editBtn=document.createElement('button');
+                editBtn.innerText="Edit";
+                editBtn.classList.add('btn','editBtn');
+                li.appendChild(editBtn);
+                            
+                const deleteBtn=document.createElement('button');
+                deleteBtn.innerText="Remove";
+                deleteBtn.classList.add('btn','deleteBtn');
+                li.appendChild(deleteBtn);
+
+                todolist.appendChild(li);
+                inputText.value="";
+            }
+        }
+
+        const remove = (e)=>{
+            if(e.target.innerHTML === "Remove"){
+                todolist.removeChild(e.target.parentElement);
+
+            }
+            if(e.target.innerHTML === "Edit"){
+                inputText.value=e.target.previousElementSibling.innerHTML;
+                inputText.focus();
+                inputBtn.textContent = "Edit";
+                editTodo = e.target.parentElement;
+            }
+        }
+
+        inputBtn.addEventListener('click',add);
+        todolist.addEventListener('click',remove);
+
+    </script>
+</body>
+</html>

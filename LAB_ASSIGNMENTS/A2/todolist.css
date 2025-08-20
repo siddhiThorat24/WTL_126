@@ -1,0 +1,244 @@
+/** *{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    height: 500px;
+    flex-direction: column;
+    background-color: rgb(212, 212, 191);
+    padding-top: 30px;
+}
+
+.input-container{
+    width: 100%;
+    text-align: center;
+}
+
+.text{
+    padding: 18px;
+    width: 320px;
+    border: none;
+    border-radius: 4px;
+}
+
+.Btn{
+    padding: 18px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3da33d;
+    color: white;
+    font-weight: 600;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.Btn:hover{
+    background-color: #60b160;
+}
+
+ul{
+    width: 70%;
+    max-width: 450px;
+    /*display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;*/
+/*
+}
+
+ul li{
+    list-style: none;
+    cursor: pointer;
+    border: 1px solid #a19f9f;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.5s;
+}
+
+ul li:hover{
+    background-color: #bbb6b6e3;
+}
+
+ul li p{
+    flex-grow: 1;
+    padding: 2px;
+}
+
+.btn{
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 550;
+    padding: 8px;
+    background-color: #ffffff;
+}
+
+.deleteBtn{
+    color: red;
+}
+
+.editBtn{
+    color: green;
+}
+
+**/
+
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to right, #0CC2BF, #2B79D9,#05F0D8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+}
+
+.input-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-container h1 {
+    margin-bottom: 20px;
+    color: #2f4f4f;
+    font-size: 32px;
+}
+
+.text {
+    padding: 14px;
+    width: 70%;
+    border: 2px solid #3da33d;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.text:focus {
+    border-color: #60b160;
+    box-shadow: 0 0 5px rgba(96, 177, 96, 0.5);
+}
+
+.Btn {
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #3da33d;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.Btn:hover {
+    background-color: #60b160;
+}
+
+ul {
+    padding: 0;
+    margin-top: 10px;
+}
+
+ul li {
+    list-style: none;
+    margin: 10px 0;
+    padding: 14px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease, background-color 0.3s;
+}
+
+ul li:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+ul li p {
+    flex-grow: 1;
+    margin-right: 10px;
+    word-break: break-word;
+    color: #333;
+    font-size: 16px;
+}
+
+.btn {
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    margin-left: 5px;
+    transition: all 0.2s ease;
+}
+
+.editBtn {
+    background-color: #e6ffe6;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+}
+
+.editBtn:hover {
+    background-color: #c8e6c9;
+}
+
+.deleteBtn {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+}
+
+.deleteBtn:hover {
+    background-color: #ffcdd2;
+}
+
+header {
+    background-color: #36dacc;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+footer {
+    background-color: #90c8ec;
+    color: black;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 14px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+
+}
