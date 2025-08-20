@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Joke Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb, #a18cd1);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+            width: 400px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        button {
+            background: #ff9800;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: #e68900;
+        }
+        #joke {
+            margin-top: 25px;
+            font-size: 18px;
+            color: #444;
+            padding: 15px;
+            border-radius: 10px;
+            background: #f9f9f9;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+        }
+        .icon {
+            font-size: 40px;
+            color: #ff9800;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <i class="fa-solid fa-face-grin-squint-tears icon"></i>
+        <h1>Random Joke Generator</h1>
+        <button onclick="getJoke()"><i class="fa-solid fa-laugh"></i> Get a Joke</button>
+        <div id="joke"></div>
+    </div>
+
+    <script>
+        async function getJoke() {
+            document.getElementById('joke').innerHTML = "<i class='fa-solid fa-spinner fa-spin'></i> Loading...";
+            try {
+                let response = await fetch('https://official-joke-api.appspot.com/random_joke');
+                let data = await response.json();
+                document.getElementById('joke').innerHTML =
+                    `<i class="fa-solid fa-quote-left"></i> ${data.setup} <br><b>${data.punchline}</b> <i class="fa-solid fa-quote-right"></i>`;
+            } catch (error) {
+                document.getElementById('joke').innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Failed to fetch joke.";
+            }
+        }
+    </script>
+</body>
+</html>
